@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:jnshop/presentation/views/chat/chat_page.dart';
 import 'package:jnshop/presentation/views/favorite/favorite_page.dart';
 import 'package:jnshop/presentation/views/main/home_page.dart';
-import 'package:jnshop/presentation/views/main/profile_page.dart';
 import 'package:jnshop/presentation/views/setting/setting_page.dart';
 import 'package:jnshop/presentation/widgets/bottom_nav.dart';
 
@@ -27,27 +26,29 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leadingWidth: 150,
           leading: Padding(
             padding: const EdgeInsets.all(8),
-            child: Image.asset(
-              fit: BoxFit.cover,
-              "assets/images/J_logo.png",
-              height: 5,
+            child: Text(
+              "JNShop",
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87),
             ),
           ),
-          title: Text(getTitle(_currentIndex)),
+          // title: Text(getTitle(_currentIndex)),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 20),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ProfilePage()));
-                },
-                child: const CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/Dog.jpg"),
+              child: Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey.shade400),
+                    shape: BoxShape.circle),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(
+                      onTap: () {}, child: Icon(Icons.shopping_bag_outlined)),
                 ),
               ),
             )
