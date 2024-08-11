@@ -8,8 +8,8 @@ class AppAppbar {
     elevation: 0,
     shadowColor: AppColors.primary,
     centerTitle: true,
-    iconTheme: const IconThemeData(
-      color: Colors.white,
+    iconTheme: IconThemeData(
+      color: Colors.grey.shade600,
     ),
     titleTextStyle: const TextStyle(
       color: Colors.white,
