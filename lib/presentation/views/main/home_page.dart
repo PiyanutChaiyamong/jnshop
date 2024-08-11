@@ -92,12 +92,6 @@ class _HomePageState extends State<HomePage> {
                     width: 8,
                   ),
                   _buildCategoryItem(
-                    'เครื่องประดับ',
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  _buildCategoryItem(
                     'มือถือ',
                   ),
                 ],
