@@ -8,7 +8,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-String _searchQuery = '';
+String _selectedCategory = 'All';
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -38,20 +38,98 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(fontSize: 10),
                   )
                 ],
-              ))
+              )),
+          SizedBox(
+            width: 16,
+            height: 16,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  _buildCategoryItem(
+                    'ความงานและของใช้ส่วนตัว',
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  _buildCategoryItem(
+                    'กลุ่มผลิตภัณฑ์เพื่อสุขภาพ',
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  _buildCategoryItem(
+                    'เสื้อผ้าแฟชั่นผู้ชาย',
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  _buildCategoryItem(
+                    'เสื้อผ้าแฟชั่นผู้หญิง',
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  _buildCategoryItem(
+                    'กระเป๋า',
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  _buildCategoryItem(
+                    'รองเท้าผู้ชาย',
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  _buildCategoryItem(
+                    'รองเท้าผู้หญิง',
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  _buildCategoryItem(
+                    'เครื่องประดับ',
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  _buildCategoryItem(
+                    'มือถือ',
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
   }
 
-  Widget _buildGridItem(IconData icon, String label) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, size: 60),
-        SizedBox(height: 8),
-        Text(label, textAlign: TextAlign.center),
-      ],
+  Widget _buildCategoryItem(String category) {
+    bool isSelected = _selectedCategory == category;
+
+    return TextButton(
+      onPressed: () {
+        setState(() {
+          _selectedCategory = category;
+        });
+      },
+      style: TextButton.styleFrom(
+        backgroundColor: isSelected ? Colors.green : Colors.transparent,
+        padding: EdgeInsets.all(16),
+        side: BorderSide(color: isSelected ? Colors.green : Colors.black),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+      ),
+      child: Text(
+        category,
+        style: TextStyle(color: isSelected ? Colors.white : Colors.black),
+      ),
     );
   }
 }
