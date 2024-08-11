@@ -10,7 +10,7 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Text('หน้าแชท'),
       ],

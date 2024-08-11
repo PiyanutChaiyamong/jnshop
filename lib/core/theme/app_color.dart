@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../constant/helper.dart';
+import 'package:jnshop/core/constant/helper.dart';
 
 class AppColors {
   static final primary = hexToColor('#1cb00b');

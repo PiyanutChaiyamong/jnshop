@@ -17,16 +17,16 @@ class BottomNav extends StatelessWidget {
           label: 'หน้าแรก',
         ),
         BottomNavigationBarItem(
+          icon: Icon(Icons.search),
+          label: 'ค้นหา',
+        ),
+        BottomNavigationBarItem(
           icon: Icon(Icons.favorite_outline),
           label: 'ถูกใจ',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat_outlined),
-          label: 'แชท',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings_outlined),
-          label: 'ตั้งค่า',
+          icon: Icon(Icons.account_circle_outlined),
+          label: 'โปรไฟล์',
         ),
       ],
     );

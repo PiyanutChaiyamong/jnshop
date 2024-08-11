@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'app_color.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:jnshop/core/theme/app_color.dart';
 
 class AppAppbar {
   static final appbar = AppBarTheme(
@@ -11,11 +11,11 @@ class AppAppbar {
     iconTheme: IconThemeData(
       color: Colors.grey.shade600,
     ),
-    titleTextStyle: const TextStyle(
+    titleTextStyle: TextStyle(
       color: Colors.white,
       fontSize: 16,
       fontWeight: FontWeight.bold,
-      //fontFamily: GoogleFonts.prompt(fontStyle: FontStyle.normal).fontFamily,
+      fontFamily: GoogleFonts.prompt(fontStyle: FontStyle.normal).fontFamily,
     ),
   );
 }

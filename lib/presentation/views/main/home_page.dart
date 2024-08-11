@@ -10,17 +10,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
-  }
-
-  Widget _buildGridItem(IconData icon, String label) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, size: 60),
-        SizedBox(height: 8),
-        Text(label, textAlign: TextAlign.center),
-      ],
+    return const Center(
+      child: Text('Home'),
     );
   }
 }
