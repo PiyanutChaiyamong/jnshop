@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jnshop/core/theme/app_theme.dart';
 import 'package:jnshop/presentation/views/splash_page.dart';
 
 void main() {
@@ -10,9 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'NongGmail',
-      home: SplashPage(),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: MyTheme.lightTheme,
+      home: const SplashPage(),
     );
   }
 }

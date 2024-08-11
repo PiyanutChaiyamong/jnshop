@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jnshop/presentation/views/main/root_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -14,6 +15,18 @@ class _SplashPageState extends State<SplashPage> {
       body: Center(
         child: Text('Loading...'),
       ),
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const RootPage()));
+      },
     );
   }
 }
