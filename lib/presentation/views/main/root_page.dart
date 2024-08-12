@@ -4,7 +4,7 @@ import 'package:jnshop/presentation/views/checkbill/check_bill_page.dart';
 import 'package:jnshop/presentation/views/details/detail_page.dart';
 import 'package:jnshop/presentation/views/favorite/favorite_page.dart';
 import 'package:jnshop/presentation/views/main/home_page.dart';
-import 'package:jnshop/presentation/views/setting/setting_page.dart';
+import 'package:jnshop/presentation/views/profile/profile_page.dart';
 import 'package:jnshop/presentation/widgets/bottom_nav.dart';
 // Import the DetailPage
 
@@ -22,7 +22,7 @@ class _RootPageState extends State<RootPage> {
         const HomePage(),
         const FavoritePage(),
         const ChatPage(),
-        const SettingPage(),
+        const ProfilePage(),
       ];
 
   @override
