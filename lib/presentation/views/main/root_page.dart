@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jnshop/presentation/views/chat/chat_page.dart';
+import 'package:jnshop/presentation/views/checkbill/check_bill_page.dart';
 import 'package:jnshop/presentation/views/favorite/favorite_page.dart';
 import 'package:jnshop/presentation/views/main/home_page.dart';
 import 'package:jnshop/presentation/views/setting/setting_page.dart';
@@ -51,7 +52,14 @@ class _RootPageState extends State<RootPage> {
               child: Padding(
                 padding: const EdgeInsets.all(8),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CheckBillPage(),
+                      ),
+                    );
+                  },
                   child: const Icon(Icons.shopping_bag_outlined),
                 ),
               ),
