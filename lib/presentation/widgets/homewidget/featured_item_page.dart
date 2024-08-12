@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:jnshop/presentation/views/details/detail_page.dart'; // Import the DetailPage
 
 class FeaturedItemPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _buildFeaturedItem();
+    return _buildFeaturedItem(context);
   }
 
-  Widget _buildFeaturedItem() {
+  Widget _buildFeaturedItem(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(16),
       child: Align(
@@ -24,19 +25,31 @@ class FeaturedItemPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 elevation: 4,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        'assets/images/Dog.jpg',
-                        height: 125,
-                        width: 125,
-                        fit: BoxFit.cover,
+                child: GestureDetector(
+                  onTap: () {
+                    // Navigate to ProductPage when the image is clicked
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ProductPage(), // Navigate to the ProductPage
                       ),
-                    ),
-                  ],
+                    );
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          'assets/images/Dog.jpg',
+                          height: 125,
+                          width: 125,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

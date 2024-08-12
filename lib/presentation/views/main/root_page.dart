@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:jnshop/presentation/views/chat/chat_page.dart';
 import 'package:jnshop/presentation/views/checkbill/check_bill_page.dart';
+import 'package:jnshop/presentation/views/details/detail_page.dart';
 import 'package:jnshop/presentation/views/favorite/favorite_page.dart';
 import 'package:jnshop/presentation/views/main/home_page.dart';
 import 'package:jnshop/presentation/views/setting/setting_page.dart';
 import 'package:jnshop/presentation/widgets/bottom_nav.dart';
+// Import the DetailPage
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -29,18 +31,28 @@ class _RootPageState extends State<RootPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         leadingWidth: 150,
-        leading: const Padding(
+        leading: Padding(
           padding: EdgeInsets.all(8),
-          child: Text(
-            'JNShop',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
+          child: GestureDetector(
+            onTap: () {
+              // Navigate to DetailPage when the image is clicked
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductPage(),
+                ),
+              );
+            },
+            child: const Text(
+              'JNShop',
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
             ),
           ),
         ),
-        // title: Text(getTitle(_currentIndex)),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
@@ -72,7 +84,7 @@ class _RootPageState extends State<RootPage> {
         currentIndex: _currentIndex,
       ),
       body: _children[_currentIndex],
-    ); // Closing bracket for build method
+    );
   }
 
   void onTabTapped(int index) {
