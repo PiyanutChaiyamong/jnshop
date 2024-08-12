@@ -42,7 +42,7 @@ class FeaturedItemPage extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
-                          'assets/images/Dog.jpg',
+                          'assets/images/NIKE4.png',
                           height: 125,
                           width: 125,
                           fit: BoxFit.cover,
@@ -70,7 +70,7 @@ class FeaturedItemPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 8.0),
               child: Text(
-                "Dog",
+                "Nike",
                 style: TextStyle(fontSize: 15, color: Colors.grey),
               ),
             ),
@@ -87,7 +87,7 @@ class FeaturedItemPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: Text(
-            "\$132.00",
+            "\$199.00",
             style: TextStyle(fontSize: 20, color: Colors.black),
           ),
         ),
