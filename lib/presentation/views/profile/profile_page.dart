@@ -101,15 +101,6 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             const SizedBox(height: 5),
             ListTile(
-              leading: const Icon(Icons.favorite, size: 30),
-              title: const Text(
-                'Wishlist',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              onTap: () {},
-            ),
-            const SizedBox(height: 5),
-            ListTile(
               leading: const Icon(Icons.event_note_sharp, size: 30),
               title: const Text(
                 'Order History',
