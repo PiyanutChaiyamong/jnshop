@@ -6,6 +6,8 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  String _selectedSize = "Select Size"; // ตัวแปรสำหรับเก็บไซส์ที่เลือก
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +54,6 @@ class _ProductPageState extends State<ProductPage> {
             ),
             backgroundColor: Colors.white,
             pinned: true,
-            // ทำให้ AppBar ติดอยู่ที่ด้านบนเมื่อเลื่อน
             leading: IconButton(
               icon: Icon(Icons.arrow_back, color: Colors.black),
               onPressed: () {
@@ -149,18 +150,32 @@ class _ProductPageState extends State<ProductPage> {
                     ),
                   ),
                   SizedBox(height: 8),
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade400),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      'CHOOSE SIZE      >',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey.shade500,
-                        fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () {
+                      _showSizeSelector(
+                          context); // เรียกฟังก์ชันแสดงตัวเลือกไซส์
+                    },
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey.shade400),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            _selectedSize,
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey.shade500,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Icon(Icons.arrow_drop_down,
+                              color: Colors.grey.shade500),
+                        ],
                       ),
                     ),
                   ),
@@ -228,6 +243,66 @@ class _ProductPageState extends State<ProductPage> {
         border: Border.all(color: color, width: 2),
         shape: BoxShape.circle,
       ),
+    );
+  }
+
+  void _showSizeSelector(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "CHOOSE SIZE",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Divider(),
+              ListTile(
+                title: Text("Size 38"),
+                onTap: () {
+                  setState(() {
+                    _selectedSize = "Size 38";
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text("Size 40"),
+                onTap: () {
+                  setState(() {
+                    _selectedSize = "Size 40";
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text("Size 42"),
+                onTap: () {
+                  setState(() {
+                    _selectedSize = "Size 42";
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text("Size 44"),
+                onTap: () {
+                  setState(() {
+                    _selectedSize = "Size 44";
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
