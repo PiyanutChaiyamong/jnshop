@@ -8,6 +8,8 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  String _selectedSize = "Select Size"; // ตัวแปรสำหรับเก็บไซส์ที่เลือก
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
