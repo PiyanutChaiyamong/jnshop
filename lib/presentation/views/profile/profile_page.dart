@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jnshop/presentation/views/profile/edit_profile.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -88,7 +89,15 @@ class _ProfilePageState extends State<ProfilePage> {
                 'Edit Profile',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        EditProfilePage(), // Navigate to the ProductPage
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 5),
             ListTile(
