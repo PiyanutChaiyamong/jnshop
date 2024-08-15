@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jnshop/presentation/views/profile/edit_profile.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -14,119 +13,94 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 5),
-            const Center(
-              child: Text(
-                'โปรไฟล์',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(height: 5),
+            SizedBox(height: 50),
             Stack(
               alignment: Alignment.center,
               children: [
                 // Outer circle
                 Container(
-                  width: 230, // Adjust size of outer circle
-                  height: 230,
+                  width: 90, // Adjust size of outer circle
+                  height: 90,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                        color: Colors.grey.shade300,
-                        width: 1), // Outer circle color and width
+                        color: Colors.blue,
+                        width: 4), // Outer circle color and width
                   ),
                 ),
                 // Inner circle
                 Container(
-                  width: 180, // Adjust size of inner circle
-                  height: 180,
+                  width: 80, // Adjust size of inner circle
+                  height: 80,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                        color: Colors.blue.shade400,
-                        width: 1), // Inner circle color and width
+                        color: Colors.white,
+                        width: 4), // Inner circle color and width
                   ),
                 ),
                 // CircleAvatar with image
-                const CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/Dog.jpg'),
-                  radius: 60,
+                CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/Dog.jpg"),
+                  radius: 40,
                 ),
               ],
             ),
-            const SizedBox(height: 8),
-            const Center(
+            SizedBox(height: 8.0),
+            Center(
               child: Text(
-                'Mr.JNShop',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                'JNShop',
+                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 160),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.circle,
-                    color: Colors.green,
-                    size: 10,
-                  ),
-                  SizedBox(
-                    height: 30,
-                    width: 5,
-                  ),
-                  Text(
-                    'Active Status',
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                  ),
-                ],
+            Center(
+              child: Text(
+                'Active Status',
+                style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
               ),
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 80),
             ListTile(
-              leading: const Icon(Icons.person, size: 30),
-              title: const Text(
-                'Edit Profile',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        EditProfilePage(), // Navigate to the ProductPage
-                  ),
-                );
-              },
-            ),
-            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Edit Profile',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               onTap: () {},
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 18),
             ListTile(
-              leading: const Icon(Icons.event_note_sharp, size: 30),
-              title: const Text(
-                'Order History',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+              leading: Icon(Icons.location_on),
+              title: Text('Shopping Address',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               onTap: () {},
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 18),
             ListTile(
-              leading: const Icon(Icons.notifications_sharp, size: 30),
-              title: const Text(
-                'Notification',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+              leading: Icon(Icons.favorite),
+              title: Text('Wishlist',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               onTap: () {},
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 18),
             ListTile(
-              leading: const Icon(Icons.credit_card_sharp, size: 30),
-              title: const Text(
-                'Card',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+              leading: Icon(Icons.event_note_sharp),
+              title: Text('Order History',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              onTap: () {},
+            ),
+            SizedBox(height: 18),
+            ListTile(
+              leading: Icon(Icons.notifications_sharp),
+              title: Text('Notification',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              onTap: () {},
+            ),
+            SizedBox(height: 18),
+            ListTile(
+              leading: Icon(Icons.credit_card_sharp),
+              title: Text('Card',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               onTap: () {},
             ),
           ],
