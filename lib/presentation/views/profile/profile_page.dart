@@ -18,7 +18,7 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 5),
             const Center(
               child: Text(
-                'โปรไฟล์',
+                'Profile',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
