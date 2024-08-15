@@ -63,7 +63,7 @@ class EditProfilePage extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
-                    Text('Chonburi, Thailand'),
+                    Text('Bankok, Thailand'),
                     SizedBox(height: 15),
                     ElevatedButton(
                       onPressed: () {
