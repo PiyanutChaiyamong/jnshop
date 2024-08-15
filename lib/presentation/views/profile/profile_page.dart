@@ -99,13 +99,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 );
               },
             ),
-            const SizedBox(height: 5),
             ListTile(
-              leading: const Icon(Icons.location_on, size: 30),
-              title: const Text(
-                'Shopping Address',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
               onTap: () {},
             ),
             const SizedBox(height: 5),
