@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jnshop/presentation/views/details/detail_page.dart'; // Import the DetailPage
 
-class FeaturedItemPage extends StatelessWidget {
+class ProductItem extends StatelessWidget {
+  const ProductItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return _buildFeaturedItem(context);
@@ -16,7 +18,6 @@ class FeaturedItemPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              color: Colors.grey.shade100,
               width: 180,
               height: 180,
               child: Card(
@@ -24,7 +25,6 @@ class FeaturedItemPage extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                elevation: 4,
                 child: GestureDetector(
                   onTap: () {
                     // Navigate to ProductPage when the image is clicked
