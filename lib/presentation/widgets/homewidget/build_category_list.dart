@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CategoryPage extends StatefulWidget {
+  const CategoryPage({super.key});
+
   @override
   _CategoryPageState createState() => _CategoryPageState();
 }
 
 class _CategoryPageState extends State<CategoryPage> {
-  String _selectedCategory = '';
+  String _selectedCategory = 'ความงามและของใช้ส่วนตัว';
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +28,13 @@ class _CategoryPageState extends State<CategoryPage> {
     ];
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
           children: categories.map((category) {
             return Padding(
-              padding: EdgeInsets.only(right: 8),
+              padding: const EdgeInsets.only(right: 8),
               child: _buildCategoryItem(category),
             );
           }).toList(),
@@ -42,7 +44,7 @@ class _CategoryPageState extends State<CategoryPage> {
   }
 
   Widget _buildCategoryItem(String category) {
-    bool isSelected = _selectedCategory == category;
+    final bool isSelected = _selectedCategory == category;
 
     return TextButton(
       onPressed: () {
@@ -52,7 +54,7 @@ class _CategoryPageState extends State<CategoryPage> {
       },
       style: TextButton.styleFrom(
         backgroundColor: isSelected ? Colors.green : Colors.transparent,
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         side: BorderSide(color: isSelected ? Colors.green : Colors.black),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),

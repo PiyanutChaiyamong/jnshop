@@ -11,13 +11,13 @@ class ProductItem extends StatelessWidget {
 
   Widget _buildFeaturedItem(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(12),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               width: 180,
               height: 180,
               child: Card(
@@ -25,35 +25,36 @@ class ProductItem extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: GestureDetector(
-                  onTap: () {
-                    // Navigate to ProductPage when the image is clicked
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            ProductPage(), // Navigate to the ProductPage
-                      ),
-                    );
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/images/NIKE4.png',
-                          height: 125,
-                          width: 125,
-                          fit: BoxFit.cover,
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: GestureDetector(
+                    onTap: () {
+                      // Navigate to ProductPage when the image is clicked
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ProductPage(), // Navigate to the ProductPage
                         ),
-                      ),
-                    ],
+                      );
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            'assets/images/NIKE4.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             _buildFeaturedItemDetails(),
           ],
         ),
@@ -62,13 +63,13 @@ class ProductItem extends StatelessWidget {
   }
 
   Widget _buildFeaturedItemDetails() {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+              padding: EdgeInsets.only(left: 8.0),
               child: Text(
                 "Nike",
                 style: TextStyle(fontSize: 15, color: Colors.grey),
@@ -85,7 +86,7 @@ class ProductItem extends StatelessWidget {
         ),
         SizedBox(height: 3),
         Padding(
-          padding: const EdgeInsets.only(left: 8.0),
+          padding: EdgeInsets.only(left: 8.0),
           child: Text(
             "\$199.00",
             style: TextStyle(fontSize: 20, color: Colors.black),

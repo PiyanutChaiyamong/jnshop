@@ -14,17 +14,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: SearchWidget(),
-          ),
-          SizedBox(height: 150),
+          SearchWidget(),
+          SizedBox(height: 15),
           TextHeader(),
-          SizedBox(height: 16),
+          SizedBox(height: 15),
           CategoryPage(),
           ProductItem(),
           // EditProfilePage(),
