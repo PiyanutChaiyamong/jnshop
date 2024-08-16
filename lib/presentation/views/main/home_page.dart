@@ -16,12 +16,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SearchWidget(),
-          SizedBox(height: 15),
+          SizedBox(height: 150),
           TextHeader(),
-          SizedBox(height: 15),
+          SizedBox(height: 150),
           CategoryPage(),
           ProductItem(),
           // EditProfilePage(),
