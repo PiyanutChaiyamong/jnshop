@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jnshop/presentation/views/chat/chat_page.dart';
 import 'package:jnshop/presentation/views/checkbill/check_bill_page.dart';
-import 'package:jnshop/presentation/views/details/detail_page.dart';
 import 'package:jnshop/presentation/views/favorite/favorite_page.dart';
 import 'package:jnshop/presentation/views/main/home_page.dart';
 import 'package:jnshop/presentation/views/profile/profile_page.dart';
@@ -31,25 +30,14 @@ class _RootPageState extends State<RootPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         leadingWidth: 150,
-        leading: Padding(
+        leading: const Padding(
           padding: EdgeInsets.all(8),
-          child: GestureDetector(
-            onTap: () {
-              // Navigate to DetailPage when the image is clicked
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ProductPage(),
-                ),
-              );
-            },
-            child: const Text(
-              'JNShop',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
-              ),
+          child: Text(
+            'JNShop',
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
             ),
           ),
         ),
